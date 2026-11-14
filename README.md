@@ -15,18 +15,24 @@ The goal was to simulate an attack and validate detection across **network, host
 
 ---
 ## 🧪 Lab Architecture
-
 | Component | Configuration |
 |---|---|
 | Attacker | Kali Linux — `192.168.0.197` |
 | Target server | Debian 12 — `192.168.0.101` |
-| SIEM | Wazuh |
-| NIDS | Suricata 7.0.10 |
-| Wazuh Agent | 4.13.1 |
-| Automated response | Fail2Ban 1.0.2-2 |
-| Firewall | nftables |
-| Log source | systemd journal |
-| Monitored service | SSH — TCP port 22 |
+| Windows endpoint | Windows 11 VM — `192.168.0.247` |
+| SIEM | Wazuh Manager — `192.168.0.85` |
+| Linux NIDS | Suricata 7.0.10 |
+| Linux Wazuh Agent | 4.13.1 |
+| Windows Wazuh Agent | 4.14.9 |
+| Windows endpoint monitoring | Sysmon 15.22 |
+| Sysmon configuration | SwiftOnSecurity |
+| Linux automated response | Fail2Ban 1.0.2-2 |
+| Linux firewall | nftables |
+| Linux log source | systemd journal |
+| Windows log source | Microsoft-Windows-Sysmon/Operational |
+| Monitored Linux service | SSH — TCP port 22 |
+| Windows network monitoring | Outbound SSH (TCP/22) and HTTPS (TCP/443) |
+| Custom Wazuh rules | 100100 — SSH; 100101 — HTTPS |
 
 ---
 
@@ -178,6 +184,85 @@ This extension demonstrates a basic automated response workflow alongside the ex
 * [x] Source IP blocked through nftables
 * [x] Automatic unblocking confirmed in logs
 * [x] SSH connectivity restored after the ban expired
+
+---
+
+## 🖥️ Windows Endpoint & Network Monitoring — Sysmon + Wazuh
+
+### Objective
+
+Extend the existing monitoring environment with Windows endpoint telemetry and network connection detection using Sysmon and Wazuh.
+
+This module focuses on monitoring outbound network connections from a Windows 11 endpoint and generating dedicated Wazuh alerts for SSH and HTTPS traffic.
+
+### Environment
+
+- Endpoint: Windows 11 VM
+- Windows IP: `192.168.0.247`
+- Telemetry source: Microsoft-Windows-Sysmon/Operational
+- Sysmon version: 15.22
+- Sysmon configuration: SwiftOnSecurity
+- Wazuh Agent: 4.14.9
+- Wazuh Manager: `192.168.0.85`
+- Monitored event: Sysmon Event ID 3 — Network Connection
+
+### Data Collection Workflow
+
+1. Sysmon monitors network connection events on Windows 11.
+2. Windows events are written to the Sysmon Operational event channel.
+3. Wazuh Agent collects events through the Windows EventChannel integration.
+4. Events are forwarded to the central Wazuh Manager.
+5. Custom Wazuh rules identify selected outbound network connections.
+6. Matching events generate security alerts in Wazuh.
+
+### Custom Detection Rules
+
+Two custom Wazuh rules were implemented and validated:
+
+| Rule ID | Detection | Conditions |
+|---|---|---|
+| `100100` | Outbound SSH | TCP, initiated connection, destination port 22, `ssh.exe` |
+| `100101` | Outbound HTTPS | TCP, initiated connection, destination port 443 |
+
+Both rules use Sysmon Event ID 3 as their event source and generate Wazuh alerts at level 5.
+
+### Validation Results
+
+**SSH Detection**
+
+- Source endpoint: Windows 11 VM
+- Process: `ssh.exe`
+- Destination: Wazuh Manager host (`192.168.0.85`)
+- Destination port: TCP/22
+- Wazuh rule: `100100`
+- Result: Alert successfully generated.
+
+**HTTPS Detection**
+
+- Source endpoint: Windows 11 VM
+- Process: `OneDrive.Sync.Service.exe`
+- Destination IP: `74.151.238.130`
+- Destination port: TCP/443
+- Wazuh rule: `100101`
+- Result: Alert successfully generated.
+
+### Evidence and Log Analysis
+
+The generated alerts were verified in:
+
+- `/var/ossec/logs/archives/archives.json`
+- `/var/ossec/logs/alerts/alerts.json`
+
+The validation confirmed that Windows Sysmon events were collected by the Wazuh Agent, processed by the Manager, and matched against the custom detection rules.
+
+### Scope and Limitations
+
+This module demonstrates endpoint network connection monitoring. It is a separate validation scenario from the Linux SSH brute-force simulation and does not represent an authentication attack.
+
+The current implementation focuses on selected outbound SSH and HTTPS connections. It does not claim comprehensive monitoring of all Windows network traffic.
+
+---
+
 
 ## 📚 Documentation
 
