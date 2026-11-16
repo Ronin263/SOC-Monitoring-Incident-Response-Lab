@@ -298,21 +298,22 @@ Detailed documentation of the project and validation scenarios:
 * [Incident Report](docs/incident-report.md) — incident overview, detection, response, evidence, and recovery.
 * [Test Results](docs/test-results.md) — technical test results, log correlation, and validation of the automated response workflow.
   
-## 🚀 Skills Demonstrated
+## 🚀 Technical Skills Demonstrated
 
-* SOC Analysis
-* Log Analysis (Linux)
-* Network Security Monitoring
-* SIEM (Wazuh)
-* IDS/IPS (Suricata)
-* Threat Detection & Correlation
-* MITRE ATT&CK framework
-* Cybersecurity Lab Setup
-* Automated Incident Response
-* Linux Firewall Management (nftables)
-* Fail2Ban Configuration and Validation
-* Incident Timeline Analysis
-* Security Event Investigation
+* Linux security monitoring and log analysis
+* SSH brute-force attack detection
+* Network traffic analysis with Suricata
+* SIEM event analysis and correlation with Wazuh
+* Custom Wazuh detection rule development
+* Windows endpoint monitoring with Sysmon
+* Windows EventChannel log collection
+* Network connection detection (Sysmon Event ID 3)
+* SSH and HTTPS traffic monitoring
+* Automated incident response with Fail2Ban
+* Firewall rule enforcement with nftables
+* Security event validation and troubleshooting
+* Incident documentation and technical reporting
+
 ---
 
 ## 📎 Screenshots
