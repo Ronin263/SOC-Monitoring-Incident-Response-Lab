@@ -1,17 +1,44 @@
 # 🔐 SSH Brute Force Attack Detection using Wazuh & Suricata
 
+
 ## 📌 Project Overview
 
-This project demonstrates a **realistic SSH brute force attack simulation** in a home lab environment and its detection using a **multi-layered security approach**:
+This project demonstrates a multi-layered cybersecurity monitoring and incident response environment built in a controlled home lab.
 
-* 🧠 SIEM: Wazuh
-* 🌐 NIDS: Suricata
-* 🖥️ Host logs: Debian (journalctl)
-* ⚔️ Attack tool: Hydra (Kali Linux)
-* 🛡️ Automated response: Fail2Ban
-* 🔥 Firewall enforcement: nftables
+The lab combines Linux server security monitoring with Windows endpoint network monitoring, using centralized event analysis through Wazuh.
 
-The goal was to simulate an attack and validate detection across **network, host, and SIEM layers**, similar to real SOC operations.
+The project consists of three main areas:
+
+### 1. Linux SSH Brute Force Detection
+- Attack simulation using Hydra on Kali Linux.
+- SSH authentication monitoring on Debian 12.
+- Network traffic inspection using Suricata.
+- Host-based event analysis and correlation in Wazuh.
+
+### 2. Automated Incident Response
+- Fail2Ban detection of repeated SSH authentication failures.
+- Automatic temporary IP blocking through nftables.
+- Validation of the ban, automatic unban, and SSH connectivity recovery.
+
+### 3. Windows Endpoint & Network Monitoring
+- Windows 11 endpoint telemetry collection using Sysmon.
+- Centralized event forwarding through Wazuh Agent.
+- Custom Wazuh detection rules for outbound SSH and HTTPS connections.
+- Validation of network connection alerts using Sysmon Event ID 3.
+
+The main technologies used include:
+
+- 🧠 SIEM: Wazuh
+- 🌐 NIDS: Suricata
+- 🖥️ Linux host monitoring: Debian 12 / systemd journal
+- 🪟 Windows endpoint monitoring: Windows 11 / Sysmon
+- 📡 Endpoint telemetry: Wazuh Agent
+- ⚔️ Attack simulation: Hydra (Kali Linux)
+- 🛡️ Automated response: Fail2Ban
+- 🔥 Firewall enforcement: nftables
+
+The goal is to demonstrate practical SOC workflows covering security monitoring, threat detection, log analysis, event correlation, and automated incident response across Linux and Windows environments.
+
 
 ---
 ## 🧪 Lab Architecture
