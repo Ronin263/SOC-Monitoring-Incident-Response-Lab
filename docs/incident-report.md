@@ -154,4 +154,8 @@ The following capabilities were successfully validated:
 - Automatic unblocking after the configured ban duration.
 - Restoration of SSH connectivity after the ban expired.
 
-This project demonstrates a multi-layered SSH attack detection and automated response workflow in a controlled cybersecurity home lab, combining Wazuh, Suricata, Fail2Ban, and nftables.
+
+This incident report documents the successful validation of a multi-layered SSH brute-force detection and automated response workflow in a controlled cybersecurity home lab.
+
+The tested workflow combined Wazuh, Suricata, Fail2Ban, and nftables to detect suspicious authentication activity, block the source IP, automatically remove the temporary restriction, and restore SSH connectivity.
+
