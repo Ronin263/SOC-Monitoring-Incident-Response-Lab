@@ -277,7 +277,23 @@ The logs provide evidence of related activity involving the same test source IP.
 ## 9. Windows Endpoint Network Monitoring — Test Results
 
 ### 9.1 Objective
+
+The objective was to validate Windows endpoint network connection monitoring using Sysmon and Wazuh.
+
+The tests focused on detecting selected outbound SSH and HTTPS connections from a Windows 11 virtual machine.
+
 ### 9.2 Test Environment
+
+| Component | Configuration |
+|---|---|
+| Endpoint | Windows 11 VM |
+| Endpoint IP | `192.168.0.247` |
+| Sysmon | 15.22 |
+| Sysmon configuration | SwiftOnSecurity |
+| Event source | Microsoft-Windows-Sysmon/Operational |
+| Wazuh Agent | 4.14.9 |
+| Wazuh Manager | `192.168.0.85` |
+| Monitored event | Sysmon Event ID 3 |
 ### 9.3 Detection Configuration
 ### 9.4 Test 1 — Outbound SSH Detection
 ### 9.5 Test 2 — Outbound HTTPS Detection
