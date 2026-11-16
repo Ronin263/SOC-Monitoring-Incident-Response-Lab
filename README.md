@@ -363,18 +363,23 @@ Screenshots and additional technical evidence will be added as the documentation
 
 ## 💬 Summary
 
-This project demonstrates a multi-layered SSH brute-force detection
-and automated response workflow in a controlled cybersecurity home lab.
 
-The environment combines Wazuh for host-based security event analysis,
-Suricata for network monitoring, Fail2Ban for automated response,
-and nftables for firewall enforcement.
+## 💬 Summary
 
-The project includes a Hydra-based SSH attack simulation and a separate
-validation of automatic IP blocking, unblocking, and SSH connectivity recovery.
+This project demonstrates a multi-layered cybersecurity monitoring and incident response environment in a controlled home lab.
 
-It demonstrates practical SOC skills in security monitoring,
-log analysis, event correlation, incident response, and technical documentation.
+The environment combines:
+
+- Wazuh for centralized security event analysis.
+- Suricata for Linux network intrusion detection.
+- Sysmon and Wazuh Agent for Windows endpoint monitoring.
+- Custom Wazuh rules for outbound SSH and HTTPS detection.
+- Fail2Ban and nftables for automated Linux incident response.
+
+The lab covers SSH brute-force attack simulation, host and network-based detection, event correlation, Windows network connection monitoring, and automated IP blocking.
+
+It demonstrates practical SOC skills in security monitoring, threat detection, log analysis, incident response, troubleshooting, and technical documentation across Linux and Windows environments.
+
 
 ---
 
