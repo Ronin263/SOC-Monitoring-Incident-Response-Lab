@@ -361,8 +361,6 @@ Wazuh alert generated after detecting an outbound HTTPS connection from the Wind
 Screenshots and additional technical evidence will be added as the documentation is finalized.
 ---
 
-## 💬 Summary
-
 
 ## 💬 Summary
 
