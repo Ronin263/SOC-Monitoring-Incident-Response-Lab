@@ -316,7 +316,11 @@ Detailed documentation of the project and validation scenarios:
 
 ---
 
-## 📎 Screenshots
+## 📸 Screenshots & Evidence
+
+### Linux SSH Brute Force Detection
+Evidence of SSH brute-force activity detection using Wazuh and Suricata.
+
 * Hydra attack
 ![Hydra](../main/screenshots/Kali.jpg)
 
@@ -332,6 +336,9 @@ Detailed documentation of the project and validation scenarios:
 ![Wazuh](../main/screenshots/siem-analysis/Wazuh2.jpg)
 ![Wazuh](../main/screenshots/siem-analysis/Wazuh3.jpg)
 
+### Automated Incident Response
+Evidence of Fail2Ban detecting repeated SSH authentication failures and enforcing temporary IP blocking through nftables.
+
 * Fail2Ban / nftables
 ![Fail2Ban detection and nftables](../main/screenshots/automated-response/fail2ban-detection_nftables.png)
 
@@ -341,7 +348,17 @@ Detailed documentation of the project and validation scenarios:
 * SSH connectivity recovery
 ![SSH connectivity recovery](../main/screenshots/automated-response/ssh-connections-recovery.png)
 
+### Windows Endpoint Monitoring — Sysmon + Wazuh
 
+**Outbound SSH Detection — Rule 100100**
+
+Wazuh alert generated after detecting an outbound SSH connection from the Windows 11 endpoint.
+
+**Outbound HTTPS Detection — Rule 100101**
+
+Wazuh alert generated after detecting an outbound HTTPS connection from the Windows 11 endpoint.
+
+Screenshots and additional technical evidence will be added as the documentation is finalized.
 ---
 
 ## 💬 Summary
