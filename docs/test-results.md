@@ -273,7 +273,19 @@ The logs provide evidence of related activity involving the same test source IP.
 * The test did not validate a direct integration in which Wazuh triggers Fail2Ban.
 
 * The test was performed in a controlled home-lab environment. It does not establish production-scale effectiveness, detection accuracy across different attack patterns, or false-positive rates.
-## 9. Conclusion
+
+## 9. Windows Endpoint Network Monitoring — Test Results
+
+### 9.1 Objective
+### 9.2 Test Environment
+### 9.3 Detection Configuration
+### 9.4 Test 1 — Outbound SSH Detection
+### 9.5 Test 2 — Outbound HTTPS Detection
+### 9.6 Alert Validation
+### 9.7 Results
+### 9.8 Observations and Limitations  
+
+## 10. Conclusion
 
 The test successfully demonstrated a basic SSH brute-force detection and automated response workflow using Wazuh, Suricata, Fail2Ban, and nftables.
 
