@@ -294,12 +294,77 @@ The tests focused on detecting selected outbound SSH and HTTPS connections from 
 | Wazuh Agent | 4.14.9 |
 | Wazuh Manager | `192.168.0.85` |
 | Monitored event | Sysmon Event ID 3 |
+
 ### 9.3 Detection Configuration
+
+Two custom Wazuh rules were implemented:
+
+| Rule ID | Detection | Conditions | Alert Level |
+|---|---|---|---|
+| `100100` | Outbound SSH | TCP, initiated, `ssh.exe`, destination port 22 | 5 |
+| `100101` | Outbound HTTPS | TCP, initiated, destination port 443 | 5 |
+
+Both rules use Sysmon Event ID 3 as their event source.
+
 ### 9.4 Test 1 — Outbound SSH Detection
+**Objective:** Validate detection of an outbound SSH connection initiated from Windows 11.
+
+Observed event:
+
+- Process: `ssh.exe`
+- Protocol: TCP
+- Destination IP: `192.168.0.85`
+- Destination port: `22`
+- Sysmon Event ID: `3`
+- Wazuh rule: `100100`
+
+**Actual result:** Wazuh generated a level 5 alert identifying the outbound SSH connection.
+
+**Status: PASS**
+
 ### 9.5 Test 2 — Outbound HTTPS Detection
+
+**Objective:** Validate detection of an outbound HTTPS connection initiated from Windows 11.
+
+Observed event:
+
+- Process: `OneDrive.Sync.Service.exe`
+- Protocol: TCP
+- Destination IP: `74.151.238.130`
+- Destination port: `443`
+- Sysmon Event ID: `3`
+- Wazuh rule: `100101`
+
+**Actual result:** Wazuh generated a level 5 alert identifying the outbound HTTPS connection.
+
+**Status: PASS**
+
 ### 9.6 Alert Validation
+
+Both custom detection rules were confirmed in:
+
+`/var/ossec/logs/alerts/alerts.json`
+
+The generated alerts contained the expected rule IDs, endpoint identity, and network connection details.
+
 ### 9.7 Results
+
+| Test | Result |
+|---|---|
+| Collect Sysmon Event ID 3 | PASS |
+| Forward Windows events through Wazuh Agent | PASS |
+| Detect outbound SSH using Rule 100100 | PASS |
+| Detect outbound HTTPS using Rule 100101 | PASS |
+| Generate Wazuh level 5 alerts | PASS |
+| Verify alerts in `alerts.json` | PASS |
+
 ### 9.8 Observations and Limitations  
+
+- The tests validated selected outbound TCP connections from the Windows endpoint.
+- HTTPS detection was confirmed using an observed OneDrive network connection.
+- These tests demonstrate network connection monitoring, not malicious activity or a successful attack.
+- Detection coverage depends on the active Sysmon configuration and the conditions defined in custom Wazuh rules.
+- The tests do not establish comprehensive monitoring of all Windows network traffic.
 
 ## 10. Conclusion
 
