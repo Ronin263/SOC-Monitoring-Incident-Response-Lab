@@ -38,6 +38,16 @@ The Wazuh Agent forwarded systemd journal events to the Wazuh Manager for centra
 
 The management host (192.168.0.195) was excluded from Fail2Ban blocking through the ignoreip configuration.
 
+
+**Environment update note:**
+
+The Wazuh Manager IP address was changed from `192.168.0.223` to `192.168.0.85` during a subsequent rebuild of the Proxmox lab environment.
+
+The original IP address is retained in the historical Linux test configuration because it reflects the environment used during the initial test execution. The Windows endpoint monitoring tests were performed using the updated Manager address (`192.168.0.85`).
+
+No changes were made to the original test results or historical evidence.
+
+
 ## 3. Detection and Response Configuration
 
 ### 3.1 Fail2Ban
