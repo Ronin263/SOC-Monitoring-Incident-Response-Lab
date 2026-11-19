@@ -297,7 +297,7 @@ The current implementation focuses on selected outbound SSH and HTTPS connection
 Detailed documentation of the project and validation scenarios:
 
 * [Incident Report](docs/incident-report.md) — incident overview, detection, response, evidence, and recovery.
-* [Test Results](docs/test-results.md) — technical test results, log correlation, and validation of the automated response workflow.
+* [Test Results](docs/test-results.md) — technical test results covering Linux SSH brute-force detection, automated response, and Windows endpoint network monitoring.
   
 ## 🚀 Technical Skills Demonstrated
 
