@@ -366,28 +366,36 @@ The generated alerts contained the expected rule IDs, endpoint identity, and net
 - Detection coverage depends on the active Sysmon configuration and the conditions defined in custom Wazuh rules.
 - The tests do not establish comprehensive monitoring of all Windows network traffic.
 
+
 ## 10. Conclusion
 
-The test successfully demonstrated a basic SSH brute-force detection and automated response workflow using Wazuh, Suricata, Fail2Ban, and nftables.
+The tests successfully demonstrated a multi-layered cybersecurity monitoring and incident response environment covering both Linux and Windows systems.
+
+The Linux testing validated the detection of repeated SSH authentication failures, network monitoring, automated IP blocking, automatic unblocking, and restoration of SSH connectivity.
+
+The Windows testing validated endpoint network connection monitoring using Sysmon and Wazuh, including custom detection rules for outbound SSH and HTTPS connections.
 
 Each component performed a distinct role:
 
-* Wazuh collected and analyzed SSH authentication events, generating alerts for failed and repeated authentication failures.
-
-* Suricata monitored SSH network traffic and generated alerts based on a custom detection signature.
-
-* Fail2Ban independently detected repeated failed SSH authentication attempts and applied a temporary firewall block through nftables.
-
+* Wazuh collected and analyzed security events from Linux and Windows endpoints.
+* Suricata monitored Linux network traffic and generated alerts based on a custom SSH detection signature.
+* Sysmon collected Windows endpoint network connection events.
+* Custom Wazuh rules 100100 and 100101 detected selected outbound SSH and HTTPS connections.
+* Fail2Ban independently detected repeated SSH authentication failures and applied temporary firewall blocks through nftables.
 * nftables enforced the temporary source IP restriction and removed it after the configured ban period.
 
-The final validation confirmed that SSH connectivity was restored after automatic unblocking.
+The Linux validation confirmed that SSH connectivity was restored after automatic unblocking. The Windows validation confirmed that Sysmon events were successfully collected and matched against the custom Wazuh detection rules.
 
-The lab demonstrated the following security workflow:
+The lab demonstrated the following security capabilities:
 
-Detection → Analysis → Automated Blocking → Temporary Containment → Automatic Unban → Connectivity Validation
+* Security event collection and analysis.
+* Host-based and network-based threat detection.
+* Windows endpoint network monitoring.
+* Custom SIEM detection rule development.
+* Automated incident containment.
+* Firewall enforcement and recovery validation.
+* Security event investigation and technical documentation.
 
-The results provide practical evidence of log analysis, network monitoring, automated response, firewall enforcement, and incident validation in a controlled Linux environment.
-
-Further improvements should focus on tuning the Suricata signature, reducing false positives, and exploring a documented integration between centralized alerting and automated response.
+Further improvements should focus on tuning the Suricata signature, reducing false positives, expanding Windows detection coverage, and exploring documented integration between centralized alerting and automated response.
 
 The results apply to the tested home-lab configuration and do not, by themselves, establish production-scale effectiveness or false-positive performance.
