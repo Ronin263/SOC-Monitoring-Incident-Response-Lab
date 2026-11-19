@@ -95,11 +95,11 @@ Suricata monitored network traffic on the Debian target server.
 
 A custom signature was used to generate alerts for selected SSH traffic:
 
-| Parameter                   | Value                           |
-| --------------------------- | ------------------------------- |
-| Alert description           | Potential SSH Brute Force Atack |
-| Signature ID (SID)          | 1000001                         |
-| Monitored destination port  | TCP 22                          |
+| Parameter                   | Value                            |
+| --------------------------- | ---------------------------------|
+| Alert description           | Potential SSH Brute Force Attack |
+| Signature ID (SID)          | 1000001                          |
+| Monitored destination port  | TCP 22                           |
 
 The signature generated alerts for SSH traffic involving both the test machine (192.168.0.197) and the management host (192.168.0.195).
 
