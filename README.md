@@ -118,11 +118,12 @@ Alert evidence is available in the screenshots below.
 
 ### 🧠 SIEM Detection (Wazuh)
 
-* Detected multiple failed login attempts
-* Triggered rules for:
+* Collected and analyzed SSH authentication events from Debian.
+* Identified two related alerts:
+* Rule 5760 — SSH authentication failure (Level 5).
+* Rule 2502 — PAM message reporting repeated authentication failures (Level 10).
 
-  * Authentication failure
-  * Password guessing
+Both alerts originated from the same SSH authentication session and should not be interpreted as two independent attack attempts.
 
 ### 🔥 MITRE ATT&CK Mapping:
 
