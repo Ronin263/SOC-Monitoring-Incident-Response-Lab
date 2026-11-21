@@ -357,6 +357,11 @@ Both custom detection rules were confirmed in:
 
 The generated alerts contained the expected rule IDs, endpoint identity, and network connection details.
 
+The following screenshots document the validation results:
+
+- SSH event overview and detailed alert — Rule 100100.
+- HTTPS event overview and detailed alert — Rule 100101.
+
 ### 9.7 Results
 
 | Test | Result |
