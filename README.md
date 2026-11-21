@@ -289,6 +289,26 @@ This module demonstrates endpoint network connection monitoring. It is a separat
 
 The current implementation focuses on selected outbound SSH and HTTPS connections. It does not claim comprehensive monitoring of all Windows network traffic.
 
+**Outbound SSH Detection — Rule 100100**
+
+Event overview:
+
+![Windows SSH Events](screenshots/windows-monitoring/windows-ssh-events.png)
+
+Detailed alert:
+
+![Windows SSH Detection](screenshots/windows-monitoring/windows-ssh-detection.png)
+
+**Outbound HTTPS Detection — Rule 100101**
+
+Event overview:
+
+![Windows HTTPS Events](screenshots/windows-monitoring/windows-https-events.png)
+
+Detailed alert:
+
+![Windows HTTPS Detection](screenshots/windows-monitoring/windows-https-detection.png)
+
 ---
 
 
@@ -336,6 +356,7 @@ Evidence of SSH brute-force activity detection using Wazuh and Suricata.
 ![Wazuh](../main/screenshots/siem-analysis/Wazuh1.jpg)
 ![Wazuh](../main/screenshots/siem-analysis/Wazuh2.jpg)
 ![Wazuh](../main/screenshots/siem-analysis/Wazuh3.jpg)
+
 
 ### Automated Incident Response
 Evidence of Fail2Ban detecting repeated SSH authentication failures and enforcing temporary IP blocking through nftables.
