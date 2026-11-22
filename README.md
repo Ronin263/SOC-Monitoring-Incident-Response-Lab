@@ -405,5 +405,5 @@ It demonstrates practical SOC skills in security monitoring, threat detection, l
 ## 👤 Author
 
 [Arkadiusz Rytych]
-[Linkedin](http://linkedin.com/in/arkadiusz-rytych-60644bb7) 
+[Linkedin](https://www.linkedin.com/in/arkadiusz-rytych-60644bb7) 
 | Cybersecurity Enthusiast | SOC Analyst  | L2 Infrastructure & Security Operation | ISC2 CC
