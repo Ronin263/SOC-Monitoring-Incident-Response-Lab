@@ -250,6 +250,8 @@ The test produced evidence in three independent security components.
 | Source IP unblocked                                 | Fail2Ban               | 18:56:42 CEST     |
 | SSH connectivity restored                           | Debian SSH journal     | 19:06:03 CEST     |
 
+For reference, the Wazuh alerts occurred at approximately 18:46:20 and 18:46:21 CEST after converting from UTC. The Fail2Ban ban was recorded at 18:46:42 CEST.
+
 Time zone note: The Wazuh timestamps are displayed in UTC, while the Debian journal and Fail2Ban timestamps shown above use local time (CEST, UTC+2). The timestamps have been presented in their respective time zones and should be converted before comparing exact event times.
 
 The logs provide evidence of related activity involving the same test source IP. However, the presence of alerts in multiple components does not by itself establish that one component triggered another.
