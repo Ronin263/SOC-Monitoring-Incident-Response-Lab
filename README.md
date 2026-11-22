@@ -313,6 +313,7 @@ Detailed documentation of the project and validation scenarios:
 * Firewall rule enforcement with nftables
 * Security event validation and troubleshooting
 * Incident documentation and technical reporting
+* Windows security event analysis
 
 ---
 
