@@ -61,6 +61,14 @@ The goal is to demonstrate practical SOC workflows covering security monitoring,
 | Windows network monitoring | Outbound SSH (TCP/22) and HTTPS (TCP/443) |
 | Custom Wazuh rules | 100100 — SSH; 100101 — HTTPS |
 
+### Lab Architecture Diagram
+
+The diagram below illustrates the virtualized lab infrastructure,
+Linux and Windows monitoring environments, security event collection,
+and centralized analysis through Wazuh.
+
+![SOC Lab Architecture](screenshots/lab-architecture.png)
+
 ---
 
 ## ⚔️ Attack Simulation
