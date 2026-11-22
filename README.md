@@ -170,7 +170,8 @@ The results demonstrate a defense-in-depth monitoring approach. However, alerts 
 * Install and configure fail2ban
 * Limit login attempts
 * Change default SSH port
-* Configure firewall rules using nftables.
+* Configure firewall rules using nftables
+* Change the default SSH port to reduce automated scanner noise (not a substitute for key-based authentication or proper access controls).
 
 ---
 ## 🛡️ Automated Incident Response — Fail2Ban & nftables
