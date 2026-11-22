@@ -357,11 +357,20 @@ Both custom detection rules were confirmed in:
 
 The generated alerts contained the expected rule IDs, endpoint identity, and network connection details.
 
-The following screenshots document the validation results:
+### Evidence
 
-- SSH event overview and detailed alert — Rule 100100.
-- HTTPS event overview and detailed alert — Rule 100101.
+The following screenshots document the validated Windows network connection alerts:
 
+**Outbound SSH — Rule 100100**
+
+- [SSH Event Overview](../screenshots/windows-monitoring/windows-ssh-events.png)
+- [SSH Detection Details](../screenshots/windows-monitoring/windows-ssh-detection.png)
+
+**Outbound HTTPS — Rule 100101**
+
+- [HTTPS Event Overview](../screenshots/windows-monitoring/windows-https-events.png)
+- [HTTPS Detection Details](../screenshots/windows-monitoring/windows-https-detection.png)
+  
 ### 9.7 Results
 
 | Test | Result |
