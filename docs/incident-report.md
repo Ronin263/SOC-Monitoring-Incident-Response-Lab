@@ -41,7 +41,7 @@ Both alerts were associated with the same SSH authentication session and provide
 
 Suricata monitored network traffic and generated an alert based on a custom SSH-related detection signature.
 
-The alert indicated potentially suspicious SSH activity. Network alerts were treated as detection indicators and correlated with host-based authentication logs.
+The Suricata alerts were reviewed alongside host-based authentication logs as part of the investigation. This represents analytical correlation of evidence, not an automated integration between Suricata, Wazuh, and Fail2Ban.
 
 ### 3.3 Automated Detection — Fail2Ban
 
