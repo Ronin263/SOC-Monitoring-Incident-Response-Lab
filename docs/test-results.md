@@ -392,6 +392,9 @@ The following screenshots document the validated Windows network connection aler
 - Detection coverage depends on the active Sysmon configuration and the conditions defined in custom Wazuh rules.
 - The tests do not establish comprehensive monitoring of all Windows network traffic.
 
+In a production SOC environment, a generic rule detecting all outbound HTTPS connections would generate significant alert volume.
+Further detection tuning would be required to reduce false positives and prioritize suspicious activity, for example by considering process context, executable reputation, digital signatures, and unusual network behavior.
+
 
 ## 10. Conclusion
 
