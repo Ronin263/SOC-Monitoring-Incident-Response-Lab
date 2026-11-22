@@ -69,7 +69,7 @@ The nftables ruleset confirmed that the source IP address was added to the Fail2
 
 ## 5. Incident Timeline
 
-| Time | Event |
+| Time (CEST)| Event |
 |---|---|
 | 18:46:42 | Fail2Ban blocked 192.168.0.197 |
 | 18:56:42 | Fail2Ban automatically unblocked 192.168.0.197 |
