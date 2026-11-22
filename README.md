@@ -1,5 +1,6 @@
-# 🔐 SSH Brute Force Attack Detection using Wazuh & Suricata
+# 🔐 SOC Monitoring & Incident Response Lab
 
+### Multi-Platform Security Monitoring, Threat Detection and Incident Response
 
 ## 📌 Project Overview
 
@@ -38,7 +39,6 @@ The main technologies used include:
 - 🔥 Firewall enforcement: nftables
 
 The goal is to demonstrate practical SOC workflows covering security monitoring, threat detection, log analysis, event correlation, and automated incident response across Linux and Windows environments.
-
 
 ---
 ## 🧪 Lab Architecture
