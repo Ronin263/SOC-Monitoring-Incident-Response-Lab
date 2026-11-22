@@ -406,4 +406,4 @@ It demonstrates practical SOC skills in security monitoring, threat detection, l
 
 [Arkadiusz Rytych]
 [Linkedin](https://www.linkedin.com/in/arkadiusz-rytych-60644bb7) 
-| Cybersecurity Enthusiast | SOC Analyst  | L2 Infrastructure & Security Operation | ISC2 CC
+| Cybersecurity Enthusiast | Aspiring SOC Analyst | L2 Infrastructure & Security Operation | ISC2 CC
