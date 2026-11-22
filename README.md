@@ -260,6 +260,8 @@ Two custom Wazuh rules were implemented and validated:
 | `100100` | Outbound SSH | TCP, initiated connection, destination port 22, `ssh.exe` |
 | `100101` | Outbound HTTPS | TCP, initiated connection, destination port 443 |
 
+The complete rule definitions are available in [Wazuh Custom Rules](rules/wazuh/windows/windows_sysmon_rules.xml). Additional implementation details are documented in [Wazuh Rules Documentation](rules/wazuh/README.md).
+
 Detection Scope: Rule 100101 currently matches outbound TCP connections to destination port 443 regardless of the originating process. Additional filtering based on process identity and context would be required for production use.
 
 Both rules use Sysmon Event ID 3 as their event source and generate Wazuh alerts at level 5.
